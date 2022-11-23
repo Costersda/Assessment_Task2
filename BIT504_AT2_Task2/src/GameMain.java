@@ -40,7 +40,7 @@ public class GameMain extends JPanel implements MouseListener{
 	public GameMain() {   
 		
 		// TODO: This JPanel fires a MouseEvent on MouseClicked so add required event listener to 'this'.          
-	    
+		addMouseListener(this);
 	    
 		// Setup the status bar (JLabel) to display status message       
 		statusBar = new JLabel("         ");       
@@ -57,10 +57,10 @@ public class GameMain extends JPanel implements MouseListener{
 		
 		
 		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-
+		board = new Board();
 		
 		//TODO: call the method to initialise the game board
-
+		initGame();
 	}
 	
 	public static void main(String[] args) {
@@ -143,12 +143,13 @@ public class GameMain extends JPanel implements MouseListener{
 				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
 
 				
-			} else 
-				if (board.isDraw ()) {
-					
-				// TODO: set the currentstate to the draw gamestate
-
-			}
+			} 
+//			else 
+//				if (board.isDraw ()) {
+//					
+//				// TODO: set the currentstate to the draw gamestate
+//
+//			}
 			//otherwise no change to current state of playing
 		}
 		
