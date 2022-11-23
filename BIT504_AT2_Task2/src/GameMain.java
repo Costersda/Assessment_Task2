@@ -54,13 +54,10 @@ public class GameMain extends JPanel implements MouseListener{
 		add(statusBar, BorderLayout.SOUTH);
 		// account for statusBar height in overall height
 		setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT + 30));
-		
-		
-		// TODO: Create a new instance of the game "Board"class. HINT check the variables above for the correct name
-		board = new Board();
-		
-		//TODO: call the method to initialise the game board
-		initGame();
+		// creates a new instance of the game "Board" class
+		board = new Board();		
+		//calls the method to initialise the game board
+		initGame();		
 	}
 	
 	public static void main(String[] args) {
@@ -97,12 +94,12 @@ public class GameMain extends JPanel implements MouseListener{
 			if (currentPlayer == Player.Cross) {   
 			
 				//TODO: use the status bar to display the message "X"'s Turn
-
+				statusBar.setText("\"X\"'s Turn");
 				
 			} else {    
 				
 				//TODO: use the status bar to display the message "O"'s Turn
-
+				statusBar.setText("\"O\"'s Turn");
 				
 			}       
 			} else if (currentState == GameState.Draw) {          
@@ -143,13 +140,12 @@ public class GameMain extends JPanel implements MouseListener{
 				// TODO: check which player has won and update the currentstate to the appropriate gamestate for the winner
 
 				
-			} 
-//			else 
-//				if (board.isDraw ()) {
-//					
-//				// TODO: set the currentstate to the draw gamestate
-//
-//			}
+			} else 
+				if (board.isDraw ()) {
+					
+				// TODO: set the currentstate to the draw gamestate
+
+			}
 			//otherwise no change to current state of playing
 		}
 		
